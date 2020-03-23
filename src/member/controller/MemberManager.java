@@ -122,17 +122,18 @@ public class MemberManager {
 		
 		for(int i = 0; i < ctn; i++) {
 			if(deleteId.equals(m[i].getUserId())) {
-				for(int j = i; j < ctn ; j++) {
+				
+				for(int j = i+1; j < ctn ; j++) {
 					Member temp = new Member();
-					temp = m[i];
-					m[i] = m[j];
-					m[j] = temp;
+					temp = m[j];
+					m[j] = m[j-1];
+					m[j-1] = temp;
 				}
 				ctn-=1;
-			} else {
-				System.out.println("삭제할 회원이 존재하지 않습니다.");
+				return;
 			}
 		}
+		System.out.println("삭제할 회원이 존재하지 않습니다.");
 	}
 	
 	public void deleteAll() {
