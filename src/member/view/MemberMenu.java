@@ -9,4 +9,6 @@ public class MemberMenu {
 	private MemberManager mm = new MemberManager();
 	
 	public MemberMenu() {}
+	
+	
 }
