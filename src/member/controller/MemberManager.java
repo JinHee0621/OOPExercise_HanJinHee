@@ -31,4 +31,18 @@ public class MemberManager {
 		
 		System.out.println("입력이 완료되었습니다. 메인 메뉴로 돌아갑니다.");
 	}
+	
+	public void searchId() {
+		System.out.print("검색할 아이디를 입력하세요: ");
+		String searchId = sc.nextLine();
+		
+		for(int i = 0; i < ctn; i++) {
+			if(searchId.equals(m[i].getUserId())) {
+				System.out.println(m[i].getUserId() + ", " + m[i].getUserPwd() + "," + m[i].getUserName() + ", "
+						+ m[i].getAge() + ", " + m[i].getGender() + ", " + m[i].getUserEmail());
+			} else {
+				System.out.println("검색한 회원 정보가 존재하지 않습니다.");
+			}
+		}
+	}
 }
