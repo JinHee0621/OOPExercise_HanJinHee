@@ -79,6 +79,7 @@ public class MemberManager {
 	}
 	
 	public void updatePwd() {
+		sc.nextLine();
 		System.out.print("수정할 회원의 아이디를 입력하세요: ");
 		String FixId = sc.nextLine();
 		
@@ -94,6 +95,7 @@ public class MemberManager {
 	}
 	
 	public void updateName() {
+		sc.nextLine();
 		System.out.print("수정할 회원의 이름을 입력하세요: ");
 		String FixName = sc.nextLine();
 		
@@ -109,6 +111,7 @@ public class MemberManager {
 	}
 	
 	public void updateEmail() {
+		sc.nextLine();
 		System.out.print("수정할 회원의 이메일을 입력하세요: ");
 		String FixEmail = sc.nextLine();
 		
@@ -121,5 +124,37 @@ public class MemberManager {
 				System.out.println("수정할 회원이 존재하지 않습니다.");
 			}
 		}
+	}
+	
+	public void deleteOne() {
+		sc.nextLine();
+		System.out.print("탈퇴할 회원의 아이디를 입력하세요: ");
+		String deleteId = sc.nextLine();
+		
+		for(int i = 0; i < ctn; i++) {
+			if(deleteId.equals(m[i].getUserId())) {
+				for(int j = i+1; j < ctn ; j++) {
+					Member temp = new Member();
+					temp = m[i];
+					m[i] = m[j];
+					m[j] = temp;
+					ctn-=1;
+				}
+			} else {
+				System.out.println("삭제할 회원이 존재하지 않습니다.");
+			}
+		}
+	}
+	
+	public void deleteAll() {
+		for(int i = 0 ;  i < ctn ; i++) {
+			m[i].setUserId("");
+			m[i].setUserPwd("");
+			m[i].setUserName("");
+			m[i].setAge(0);
+			m[i].setGender(' ');
+			m[i].setEmail("");
+		}
+		ctn = 0;
 	}
 }
