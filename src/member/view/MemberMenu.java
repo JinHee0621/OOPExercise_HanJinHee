@@ -42,7 +42,7 @@ public class MemberMenu {
 				mm.printAllMember();
 				break;
 			case 9:
-				break;
+				return;
 			}
 			
 		} while(true);
