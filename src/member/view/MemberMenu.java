@@ -33,8 +33,10 @@ public class MemberMenu {
 				searchMemberMenu();
 				break;
 			case 3:
+				updateMemberMenu();
 				break;
 			case 4:
+				deleteMemberMenu();
 				break;
 			case 5:
 				mm.printAllMember();
@@ -71,6 +73,62 @@ public class MemberMenu {
 			case 9:
 				return;
 			}
+		} while(true);
+	}
+	
+	public void updateMemberMenu() {
+		int switchNum = 0;
+		do {
+			System.out.println("=========회원 정보 수정==========");
+			System.out.println("1. 비밀번호 수정하기");
+			System.out.println("2. 이름 수정하기");
+			System.out.println("3. 이메일 수정하기");
+			System.out.println("9. 메인메뉴로");
+			System.out.println("=============================");
+			System.out.print("메뉴 번호를 입력하시오: ");
+			
+			switchNum = sc.nextInt();
+			
+			switch(switchNum) {
+			case 1:
+				mm.updatePwd();
+				break;
+			case 2:
+				mm.updateName();
+				break;
+			case 3:
+				mm.updateEmail();
+				break;
+			case 9:
+				return;
+			}
+			
+		} while(true);
+	}
+	
+	public void deleteMemberMenu() {
+		int switchNum = 0;
+		do {
+			System.out.println("=========회원 정보 삭제==========");
+			System.out.println("1. 회원삭제");
+			System.out.println("2. 전체회원 삭제");
+			System.out.println("9. 메인메뉴로");
+			System.out.println("=============================");
+			System.out.print("메뉴 번호를 입력하시오: ");
+			
+			switchNum = sc.nextInt();
+			
+			switch(switchNum) {
+			case 1:
+				mm.deleteOne();
+				break;
+			case 2:
+				mm.deleteAll();
+				break;
+			case 9:
+				return;
+			}
+			
 		} while(true);
 	}
 }
