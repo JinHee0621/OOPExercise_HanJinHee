@@ -12,6 +12,7 @@ public class MemberManager {
 	public MemberManager() {}
 	
 	public void insertMember() {
+		sc.nextLine();
 		System.out.print("아이디를 입력하세요: ");
 		String insertId = sc.nextLine();
 		System.out.print("패스워드를 입력하세요: ");
@@ -33,6 +34,7 @@ public class MemberManager {
 	}
 	
 	public void searchId() {
+		sc.nextLine();
 		System.out.print("검색할 아이디를 입력하세요: ");
 		String searchId = sc.nextLine();
 		
@@ -47,6 +49,7 @@ public class MemberManager {
 	}
 	
 	public void searchName() {
+		sc.nextLine();
 		System.out.print("검색할 이름을 입력하세요: ");
 		String searchName = sc.nextLine();
 		
@@ -61,6 +64,7 @@ public class MemberManager {
 	}
 	
 	public void searchEmail() {
+		sc.nextLine();
 		System.out.print("검색할 이메일을 입력하세요: ");
 		String searchEmail = sc.nextLine();
 		
@@ -70,6 +74,51 @@ public class MemberManager {
 						+ m[i].getAge() + ", " + m[i].getGender() + ", " + m[i].getUserEmail());
 			} else {
 				System.out.println("검색한 회원 정보가 존재하지 않습니다.");
+			}
+		}
+	}
+	
+	public void updatePwd() {
+		System.out.print("수정할 회원의 아이디를 입력하세요: ");
+		String FixId = sc.nextLine();
+		
+		for(int i = 0; i < ctn; i++) {
+			if(FixId.equals(m[i].getUserId())) {
+				sc.nextLine();
+				System.out.print("변경할 비밀번호를 입력하세요: ");
+				m[i].setUserPwd(sc.nextLine());
+			} else {
+				System.out.println("수정할 회원이 존재하지 않습니다.");
+			}
+		}
+	}
+	
+	public void updateName() {
+		System.out.print("수정할 회원의 이름을 입력하세요: ");
+		String FixName = sc.nextLine();
+		
+		for(int i = 0; i < ctn; i++) {
+			if(FixName.equals(m[i].getUserName())) {
+				sc.nextLine();
+				System.out.print("변경할 비밀번호를 입력하세요: ");
+				m[i].setUserPwd(sc.nextLine());
+			} else {
+				System.out.println("수정할 회원이 존재하지 않습니다.");
+			}
+		}
+	}
+	
+	public void updateEmail() {
+		System.out.print("수정할 회원의 이메일을 입력하세요: ");
+		String FixEmail = sc.nextLine();
+		
+		for(int i = 0; i < ctn; i++) {
+			if(FixEmail.equals(m[i].getUserName())) {
+				sc.nextLine();
+				System.out.print("변경할 비밀번호를 입력하세요: ");
+				m[i].setUserPwd(sc.nextLine());
+			} else {
+				System.out.println("수정할 회원이 존재하지 않습니다.");
 			}
 		}
 	}
