@@ -40,8 +40,7 @@ public class MemberManager {
 		
 		for(int i = 0; i < ctn; i++) {
 			if(searchId.equals(m[i].getUserId())) {
-				System.out.println(m[i].getUserId() + ", " + m[i].getUserPwd() + "," + m[i].getUserName() + ", "
-						+ m[i].getAge() + ", " + m[i].getGender() + ", " + m[i].getUserEmail());
+				printOne(m[i]);
 			} else {
 				System.out.println("검색한 회원 정보가 존재하지 않습니다.");
 			}
@@ -55,8 +54,7 @@ public class MemberManager {
 		
 		for(int i = 0; i < ctn; i++) {
 			if(searchName.equals(m[i].getUserName())) {
-				System.out.println(m[i].getUserId() + ", " + m[i].getUserPwd() + "," + m[i].getUserName() + ", "
-						+ m[i].getAge() + ", " + m[i].getGender() + ", " + m[i].getUserEmail());
+				printOne(m[i]);
 			} else {
 				System.out.println("검색한 회원 정보가 존재하지 않습니다.");
 			}
@@ -70,8 +68,7 @@ public class MemberManager {
 		
 		for(int i = 0; i < ctn; i++) {
 			if(searchEmail.equals(m[i].getUserEmail())) {
-				System.out.println(m[i].getUserId() + ", " + m[i].getUserPwd() + "," + m[i].getUserName() + ", "
-						+ m[i].getAge() + ", " + m[i].getGender() + ", " + m[i].getUserEmail());
+				printOne(m[i]);
 			} else {
 				System.out.println("검색한 회원 정보가 존재하지 않습니다.");
 			}
@@ -156,5 +153,18 @@ public class MemberManager {
 			m[i].setEmail("");
 		}
 		ctn = 0;
+	}
+	
+	public void printAllMember() {
+		
+		for(int i = 0; i < ctn ; i++) {
+			System.out.println(m[i].getUserId() + ", " + m[i].getUserPwd() + "," + m[i].getUserName() + ", "
+					+ m[i].getAge() + ", " + m[i].getGender() + ", " + m[i].getUserEmail());
+		}
+	}
+	
+	public void printOne(Member m) {
+		System.out.println(m.getUserId() + ", " + m.getUserPwd() + "," + m.getUserName() + ", "
+				+ m.getAge() + ", " + m.getGender() + ", " + m.getUserEmail());
 	}
 }
