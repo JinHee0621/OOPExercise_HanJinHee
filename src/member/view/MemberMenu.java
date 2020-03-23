@@ -10,5 +10,67 @@ public class MemberMenu {
 	
 	public MemberMenu() {}
 	
+	public void mainMenu() {
+		int switchNum = 0;
+		do {
+			
+			System.out.println("========== 회원 관리 메뉴 ==========");
+			System.out.println("1. 신규 회원 등록");
+			System.out.println("2. 회원 정보 검색");
+			System.out.println("3. 회원 정보 수정");
+			System.out.println("4. 회원 정보 삭제");
+			System.out.println("5. 회원 정보 출력");
+			System.out.println("9. 종료");
+			System.out.println("====================================");
+			System.out.print("메뉴 번호를 입력하세요: ");
+			switchNum = sc.nextInt();
+			
+			switch(switchNum) {
+			case 1:
+				mm.insertMember();
+				break;
+			case 2:
+				searchMemberMenu();
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				mm.printAllMember();
+				break;
+			case 9:
+				break;
+			}
+			
+		} while(true);
+	}
 	
+	public void searchMemberMenu() {
+		int switchNum = 0;
+		do {
+			System.out.println("========== 회원 정보 검색 ==========");
+			System.out.println("1. 아이디로 검색하기");
+			System.out.println("2. 이름으로 검색하기");
+			System.out.println("3. 이메일로 검색하기");
+			System.out.println("9. 메인메뉴로");
+			System.out.println("====================================");
+			System.out.print("메뉴 번호를 입력하세요: ");
+			switchNum = sc.nextInt();
+			
+			switch(switchNum) {
+			case 1:
+				mm.searchId();
+				break;
+			case 2:
+				mm.searchName();
+				break;
+			case 3:
+				mm.searchEmail();
+				break;
+			case 9:
+				return;
+			}
+		} while(true);
+	}
 }
